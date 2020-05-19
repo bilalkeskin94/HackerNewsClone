@@ -3,11 +3,11 @@ import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
   IonRouterOutlet,
-  IonTabs,
   IonTabBar,
   IonTabButton,
   IonIcon,
   IonLabel,
+  IonTabs,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import News from "./pages/Tabs/News";
@@ -45,9 +45,13 @@ import "./theme/variables.css";
 const App = () => (
   <IonApp>
     <IonReactRouter>
-      <IonTabs>
+      <IonTabs color="primary">
         <IonRouterOutlet>
-          <Route path="/" component={() => <Redirect to="/news" />} />
+          <Route
+            path="/"
+            component={() => <Redirect to="/news" />}
+            exact={true}
+          />
           <Route path="/news" component={News} />
           <Route path="/trending" component={Trending} />
           <Route path="/submit" component={Submit} />
@@ -55,7 +59,7 @@ const App = () => (
           <Route path="/profile" component={Profile} />
           <Route component={() => <Redirect to="/news" />} />
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="bottom" color="danger">
           <IonTabButton tab="news" href="/news">
             <IonIcon icon={newspaperOutline} />
             <IonLabel>News</IonLabel>

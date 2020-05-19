@@ -1,17 +1,17 @@
 import React from "react";
-
-import { IonHeader, IonToolbar, IonTitle, IonPage } from "@ionic/react";
+import { IonPage, IonContent } from "@ionic/react";
+import SmallHeader from "../../components/Headers/SmallHeader";
+import LargeHeader from "../../components/Headers/LargeHeader";
 
 const Search = () => {
-    return (
-        <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>Trending</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-        </IonPage>
-    );
+  return (
+    <IonPage>
+      <SmallHeader title="Search" />
+      <IonContent fullscreen>
+        <LargeHeader title="Search" />
+      </IonContent>
+    </IonPage>
+  );
 };
 
 export default Search;
